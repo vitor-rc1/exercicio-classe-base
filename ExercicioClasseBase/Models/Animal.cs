@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace ExercicioClasseBase
 {
-    public enum Habitat
-    {
-        Floresta,
-        planicie,
-        AguaSalgada,
-        AguaDoce
-    }
     public abstract class Animal
     {
         public bool Mamifero { get; set; }
@@ -27,6 +20,12 @@ namespace ExercicioClasseBase
             {
                 Habitat = habitat;
             }
+        }
+
+        protected Animal(bool mamifero, int patas)
+        {
+            Mamifero = mamifero;
+            Patas = patas;
         }
 
         public string Comer()

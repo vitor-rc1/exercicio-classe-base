@@ -19,5 +19,16 @@ namespace ExercicioClasseBase
             }
             
         }
+
+        public Passaro(bool carnivoro, int patas, Habitat habitat) : base(false, patas, habitat)
+        {
+            Carnivoro = carnivoro;
+        }
+
+        public Passaro(bool carnivoro, Porte porte, int patas) : base(false, patas)
+        {
+            Carnivoro = carnivoro;
+            Porte = porte;
+        }
     }
 }

@@ -19,5 +19,20 @@ namespace ExercicioClasseBaseTeste
             Assert.Equal("Beber leite", comer);
         }
 
+        [Theory]
+        [InlineData(Habitat.AguaSalgada)]
+        [InlineData(Habitat.AguaDoce)]
+        public void VerificaHabitatDadoUmHabitatCorreto(Habitat habitat)
+        {
+            // arrange
+            var baleia = new Baleia(30000, 15, 0, habitat);
+
+            // act
+            Habitat baleiaHabitat = baleia.Habitat;
+
+            // assert
+            Assert.Equal(habitat, baleiaHabitat);
+        }
+
     }
 }

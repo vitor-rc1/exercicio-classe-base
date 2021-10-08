@@ -10,7 +10,7 @@ namespace ExercicioClasseBaseTeste
         public void RetornaBeberLeiteDadoQueCavaloEMamifero()
         {
             // arrange
-            var cavalo = new Cavalo("Corcel", "Branco", 4, Habitat.planicie);
+            var cavalo = new Cavalo("Corcel", "Branco", 4, Habitat.Planicie);
 
             // act
             string comer = cavalo.Comer();
