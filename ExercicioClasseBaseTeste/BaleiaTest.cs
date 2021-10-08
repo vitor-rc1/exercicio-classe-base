@@ -10,7 +10,7 @@ namespace ExercicioClasseBaseTeste
         public void RetornaBeberLeiteDadoQueBaleiaEMamifero()
         {
             // arrange
-            var baleia = new Baleia(30000, 15, 0, Habitat.AguaSalgada);
+            var baleia = new Baleia(30000, 15, Habitat.AguaSalgada);
 
             // act
             string comer = baleia.Comer();
@@ -25,7 +25,7 @@ namespace ExercicioClasseBaseTeste
         public void VerificaHabitatDadoUmHabitatCorreto(Habitat habitat)
         {
             // arrange
-            var baleia = new Baleia(30000, 15, 0, habitat);
+            var baleia = new Baleia(30000, 15, habitat);
 
             // act
             Habitat baleiaHabitat = baleia.Habitat;

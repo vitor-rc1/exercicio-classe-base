@@ -10,7 +10,7 @@ namespace ExercicioClasseBaseTeste
         public void RetornaComerComidaDadoQueSapoNaoEMamifero()
         {
             // arrange
-            var sapo = new Sapo(true, 4, Habitat.Floresta);
+            var sapo = new Sapo(true, Habitat.Floresta);
 
             // act
             string comer = sapo.Comer();

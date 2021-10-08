@@ -10,7 +10,7 @@ namespace ExercicioClasseBase
     {
         public bool Carnivoro { get; set; }
         public Porte Porte { get; set; }
-        public Passaro(bool carnivoro, Porte porte, int patas, Habitat habitat) : base(false, patas, habitat)
+        public Passaro(bool carnivoro, Porte porte, Habitat habitat) : base(false, 2, habitat)
         {
             Carnivoro = carnivoro;
             if (Enum.IsDefined(typeof(Porte), porte))
@@ -20,12 +20,12 @@ namespace ExercicioClasseBase
             
         }
 
-        public Passaro(bool carnivoro, int patas, Habitat habitat) : base(false, patas, habitat)
+        public Passaro(bool carnivoro, Habitat habitat) : base(false, 2, habitat)
         {
             Carnivoro = carnivoro;
         }
 
-        public Passaro(bool carnivoro, Porte porte, int patas) : base(false, patas)
+        public Passaro(bool carnivoro, Porte porte) : base(false, 2)
         {
             Carnivoro = carnivoro;
             Porte = porte;

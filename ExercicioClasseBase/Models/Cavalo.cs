@@ -10,7 +10,7 @@ namespace ExercicioClasseBase
     {
         public string Raca { get; set; }
         public string Cor { get; set; }
-        public Cavalo(string raca, string cor, int patas, Habitat habitat) : base(true, patas, habitat)
+        public Cavalo(string raca, string cor, Habitat habitat) : base(true, 4, habitat)
         {
             Raca = raca;
             Cor = cor;

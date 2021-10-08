@@ -10,7 +10,7 @@ namespace ExercicioClasseBase
     {
         public double Quilos { get; set; }
         public double Tamanho { get; set; }
-        public Baleia(double quilos, double tamanho, int patas, Habitat habitat) : base(true, patas, habitat)
+        public Baleia(double quilos, double tamanho, Habitat habitat) : base(true, 0, habitat)
         {
             Quilos = quilos;
             Tamanho = tamanho;

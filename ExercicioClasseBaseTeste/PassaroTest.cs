@@ -10,7 +10,7 @@ namespace ExercicioClasseBaseTeste
         public void RetornaComerComidaDadoQuePassaroNaoEMamifero()
         {
             // arrange
-            var passaro = new Passaro(false, Porte.Pequeno, 2, Habitat.Planicie);
+            var passaro = new Passaro(false, Porte.Pequeno, Habitat.Planicie);
 
             // act
             string comer = passaro.Comer();
@@ -23,7 +23,7 @@ namespace ExercicioClasseBaseTeste
         public void PortePermaneceNuloDadoQueEUmPorteInvalido()
         {
             // arrange
-            var passaro = new Passaro(false, 2, Habitat.Planicie);
+            var passaro = new Passaro(false, Habitat.Planicie);
 
             // act
             Porte porte = passaro.Porte;
@@ -33,17 +33,16 @@ namespace ExercicioClasseBaseTeste
         }
 
         [Theory]
-        [InlineData(false, Porte.Pequeno, 2, Habitat.Planicie)]
-        [InlineData(false, Porte.Medio, 3, Habitat.Floresta)]
-        [InlineData(false, Porte.Grande, 2, Habitat.Planicie)]
+        [InlineData(false, Porte.Pequeno, Habitat.Planicie)]
+        [InlineData(false, Porte.Medio, Habitat.Floresta)]
+        [InlineData(false, Porte.Grande, Habitat.Planicie)]
         public void RetornaPorteCorretoDadoUmPorteValido(
             bool carnivoro,
             Porte porte,
-            int patas,
             Habitat habitat)
         {
             // arrange
-            var passaro = new Passaro(carnivoro, porte, patas, habitat);
+            var passaro = new Passaro(carnivoro, porte, habitat);
 
             // act
             Porte passaroPorte = passaro.Porte;

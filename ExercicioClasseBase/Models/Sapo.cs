@@ -9,7 +9,7 @@ namespace ExercicioClasseBase
     public class Sapo: Animal
     {
         public bool Venenoso { get; set; }
-        public Sapo(bool venenoso, int patas, Habitat habitat) : base(false, patas, habitat)
+        public Sapo(bool venenoso, Habitat habitat) : base(false, 4, habitat)
         {
             Venenoso = venenoso;
         }
