@@ -76,9 +76,9 @@ distribuidas como:
 
 Execução:
 =================
-executar o comporamento comer para todos os elementos da lista 
-exibir quantos mamiferos tem na lista
-exibir a media de peso de todas as baleias
-exibir o total de metros de todas as baleias
-exibir o total de patas na lista
+- executar o comportamento comer para todos os elementos da lista 
+- exibir quantos mamiferos tem na lista
+- exibir a média de peso de todas as baleias
+- exibir o total de metros de todas as baleias
+- exibir o total de patas na lista
 
