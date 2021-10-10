@@ -8,70 +8,49 @@ namespace ExercicioClasseBase
 {
     class Zoologico
     {
-        //public List<Animal> animais = new List<Animal>();
-
-        public List<Baleia> Baleias = new List<Baleia>();
-        public List<Cavalo> Cavalos = new List<Cavalo>();
-        public List<Passaro> Passaros = new List<Passaro>();
-        public List<Sapo> Sapos = new List<Sapo>();
+        public List<Animal> Animais = new();
 
 
-        public void CadastrarBaleias(int qtd, Baleia baleia)
+        public void CadastrarAnimal(Animal animal)
         {
-            for (int i = 0; i < qtd; i++)
-            {
-                Baleias.Add(baleia);
-            }
-        }
-
-        public void CadastrarCavalos(int qtd, Cavalo cavalo)
-        {
-            for (int i = 0; i < qtd; i++)
-            {
-                Cavalos.Add(cavalo);
-            }
-        }
-
-        public void CadastrarPassaros(int qtd, Passaro passaro)
-        {
-            for (int i = 0; i < qtd; i++)
-            {
-                Passaros.Add(passaro);
-            }
-        }
-
-        public void CadastrarSapos(int qtd, Sapo sapo)
-        {
-            for (int i = 0; i < qtd; i++)
-            {
-                Sapos.Add(sapo);
-            }
+            Animais.Add(animal);
         }
 
         public void AlimentarAnimais()
         {
-            
-            foreach (var baleia in Baleias)
+            int i = 0;
+            foreach (var animal in Animais)
             {
-                Console.WriteLine(baleia.Comer());
-            }
-            foreach (var cavalo in Cavalos)
-            {
-                Console.WriteLine(cavalo.Comer());
-            }
-            foreach (var passaro in Passaros)
-            {
-                Console.WriteLine(passaro.Comer());
-            }
-            foreach (var sapo in Sapos)
-            {
-                Console.WriteLine(sapo.Comer());
+                Console.WriteLine(animal.Comer() + " " + animal.GetType().Name);
+                i++;
             }
         }
 
-        public void Relatorio()
+        public void GerarRelatorio()
         {
-            
+            var qtdMamiferos = Animais
+                .Where(animal => animal.Mamifero)
+                .Count();
+
+            var totalPatas = Animais
+                .Select(animal => animal.Patas)
+                .Sum();
+
+            var baleias = Animais.OfType<Baleia>();
+
+            var pesoMedioBaleias = baleias
+                .Select(baleia => baleia.Quilos)
+                .Average();
+
+            var comprimentoBaleias = baleias
+                .Select(baleia => baleia.Tamanho)
+                .Sum();
+
+
+            Console.WriteLine(qtdMamiferos);
+            Console.WriteLine(pesoMedioBaleias);
+            Console.WriteLine(comprimentoBaleias);
+            Console.WriteLine(totalPatas);
         }
 
     }

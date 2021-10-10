@@ -9,32 +9,51 @@ namespace ExercicioClasseBase
             var zoo = new Zoologico();
 
             // Sapos
-            zoo.CadastrarSapos(3, new Sapo(true, Habitat.AguaDoce));
-            zoo.CadastrarSapos(3, new Sapo(false, Habitat.AguaSalgada));
+            for (int i = 0; i < 6; i++)
+            {
+                var venenoso = i % 2 == 0;
+                Habitat habitat = i % 2 == 0 ? Habitat.AguaDoce : Habitat.AguaSalgada;
+                zoo.CadastrarAnimal(new Sapo(venenoso, habitat));
+            }
 
             // Passaros
-            zoo.CadastrarPassaros(3, new Passaro(false, Porte.Pequeno, Habitat.Floresta));
+            for (int i = 0; i < 3; i++)
+            {
+                zoo.CadastrarAnimal(new Passaro(false, Porte.Pequeno, Habitat.Floresta));
+                zoo.CadastrarAnimal(new Passaro(i == 2, Porte.Medio, Habitat.Floresta));
 
-            zoo.CadastrarPassaros(2, new Passaro(false, Porte.Medio, Habitat.Floresta));
-            zoo.CadastrarPassaros(1, new Passaro(true, Porte.Medio, Habitat.Floresta));
-
-            zoo.CadastrarPassaros(3, new Passaro(true, Porte.Grande, Habitat.Floresta));
+                zoo.CadastrarAnimal(new Passaro(true, Porte.Grande, Habitat.Floresta));
+                
+            }
 
             // Cavalos
-            zoo.CadastrarCavalos(2, new Cavalo("Corcel", "Branco", Habitat.Planicie));
-            zoo.CadastrarCavalos(2, new Cavalo("Corcel", "Preto", Habitat.Planicie));
-            zoo.CadastrarCavalos(2, new Cavalo("Corcel", "Marrom", Habitat.Floresta));
-            zoo.CadastrarCavalos(2, new Cavalo("Corcel", "Cinza", Habitat.Floresta));
+            for (int i = 0; i < 2; i++)
+            {
+                zoo.CadastrarAnimal(new Cavalo("Corcel", "Branco", Habitat.Planicie));
+                zoo.CadastrarAnimal(new Cavalo("Corcel", "Preto", Habitat.Planicie));
+                zoo.CadastrarAnimal(new Cavalo("Corcel", "Marrom", Habitat.Floresta));
+                zoo.CadastrarAnimal(new Cavalo("Corcel", "Cinza", Habitat.Floresta));
+            }
+
+
 
             // Baleias
-            zoo.CadastrarBaleias(1, new Baleia(500, 10, Habitat.AguaDoce));
-            zoo.CadastrarBaleias(2, new Baleia(600, 20, Habitat.AguaDoce));
-            zoo.CadastrarBaleias(1, new Baleia(700, 40, Habitat.AguaDoce));
+            for (int i = 0; i < 8; i++)
+            {
+                var pesoInicial = 500 + (i * 100);
+                var comprimentoInicial = 10 + (i * 10);
 
-            zoo.CadastrarBaleias(2, new Baleia(700, 40, Habitat.AguaSalgada));
-            zoo.CadastrarBaleias(2, new Baleia(800, 50, Habitat.AguaSalgada));
+                 var habitat = i < 4 ? Habitat.AguaDoce : Habitat.AguaSalgada;
+
+                zoo.CadastrarAnimal(new Baleia(
+                    pesoInicial,
+                    comprimentoInicial,
+                    habitat
+                    ));
+            }
 
             zoo.AlimentarAnimais();
+            zoo.GerarRelatorio();
 
 
         }

@@ -71,13 +71,13 @@ distribuir como:
 
 distribuidas como:
 - 1 com 500 kgs 10mts, 
-- 2 com 600kgs 20mts, 
+- 2 com 600 kgs 20mts, 
 - e assim por diante
 
 Execução:
 =================
 executar o comporamento comer para todos os elementos da lista 
-exibir a quantos mamiferos tem na lista
+exibir quantos mamiferos tem na lista
 exibir a media de peso de todas as baleias
 exibir o total de metros de todas as baleias
 exibir o total de patas na lista
